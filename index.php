@@ -1,8 +1,8 @@
-<?php
+    <?php
 
-require "config.php";
+    require "config.php";
 
-require "model/Router.php";
+    require "model/Router.php";
 
-$router = new Router();
+    $router = new Router();
 
