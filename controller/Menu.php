@@ -22,17 +22,17 @@ class Menu
     public function eten()
     {
 
-        $HG = $this->HtmlElements->tableHorizontalRows($this->Model->readSQL("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 4"));
-        $BG = $this->HtmlElements->tableHorizontalRows($this->Model->readSQL("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 3"));
-        include "view/menukaart.php";
+        $HG = $this->HtmlElements->tableHorizontalRows($this->Model->read("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 5"));
+        $NA = $this->HtmlElements->tableHorizontalRows($this->Model->read("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 6"));
+        include "view/Menukaart.php";
     }
 
     public function drank()
     {
 
-        $table = $this->HtmlElements->tableHorizontalRows($this->Model->readSQL("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 1"));
+        $table = $this->HtmlElements->tableHorizontalRows($this->Model->read("SELECT product.naam,product.beschrijving,product.prijs FROM product INNER JOIN categorie on product.categorie_id = categorie.categorie_id WHERE parent_id = 1"));
 
-        include "view/drankkaart.php";
+        include "view/Drankkaart.php";
     }
 
 }

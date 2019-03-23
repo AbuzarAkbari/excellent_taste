@@ -15,9 +15,14 @@ class Model {
 //        );
 //    }
 
-    public function readSQL($sql)
+    public function read($sql)
     {
         return $this->dataHandler->readData($sql);
+    }
+
+    public function create($sql)
+    {
+        return $this->dataHandler->createData($sql);
     }
 
 
