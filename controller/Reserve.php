@@ -19,7 +19,7 @@ class Reserve
 
     }
 
-    public function form()
+    public function reserveren()
     {
         include "view/Reserveren.php";
         if(isset($_POST['submit'])){
@@ -32,7 +32,11 @@ class Reserve
 
     }
 
-    public function reserveren(){
+    public function reserveringen(){
+        $array = $this->Model->read("SELECT reservering_id, `aantal_personen` as `aantal personen` ,`gebruikt`,`tafelnummer`,`gereserveerd_voor` as `reserveer datum`,`naam`,`achternaam`,`telefoonnummer` FROM `reservering`");
+        $table2 = $this->HtmlElements->clickableLink($array);
+        $table = $this->HtmlElements->printTable($table2);
+        include "view/Reserveringen.php";
 
     }
 
